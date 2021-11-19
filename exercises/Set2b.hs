@@ -29,7 +29,12 @@ binomial n k = binomial (n-1) k  +  binomial (n-1) (k-1)
 --   oddFactorial 6 ==> 5*3*1 ==> 15
 
 oddFactorial :: Integer -> Integer
-oddFactorial = todo
+oddFactorial n
+        | n == 0 = 1
+        | n == 1 = 1
+        |n `mod` 2 == 1 = oddFactorial (n - 2) * n
+        |n `mod` 2 == 0 = oddFactorial (n-1)
+
 
 ------------------------------------------------------------------------------
 -- Ex 3: implement the Euclidean Algorithm for finding the greatest
