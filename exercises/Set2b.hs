@@ -85,7 +85,9 @@ myGcd a b =  myGcd (b `mod ` a) a
 -- * you can compute the length of a string with the length function
 
 leftpad :: String -> Int -> String
-leftpad = todo
+leftpad s n = if length s  >= n 
+        then s 
+        else leftpad (" " ++ s) n
 
 ------------------------------------------------------------------------------
 -- Ex 5: let's make a countdown for a rocket! Given a number, you
